@@ -6,19 +6,21 @@ public class ObedientRobot {
 	static Robot m = new Robot("batman");
 
 	public static void main(String[] args) {
-		m.setSpeed(1000);
+		m.setSpeed(100);
+for (int i = 0; i < 1000000; i++) {
+	
 
 		String g = JOptionPane.showInputDialog("What do you want the robot to draw?");
-		if (g == "square") {
+		if (g.equals("square")) {
 			drawSquare();
 
 			m.clear();
-		} else if (g == "triangle") {
+		} else if (g.equals("triangle")) {
 			drawTriangle();
 
 			m.clear();
 		}
-
+}
 	}
 
 	public static void drawSquare() {
@@ -36,11 +38,10 @@ public class ObedientRobot {
 
 	public static void drawTriangle() {
 		m.penDown();
-		m.move(100);
-		m.turn(60);
-		m.move(100);
-		m.turn(60);
-		m.move(100);
-		m.turn(60);
+		for (int i = 0; i < 3; i++) {
+			m.move(100);
+			m.turn(120);
+		}
+		m.clear();
 	}
 }
